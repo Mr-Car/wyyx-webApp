@@ -1,0 +1,14 @@
+{
+  "name": "day06---productStart",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "chexinwei <1256766343@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^4.0.2"
+  },
+  "devDependencies": {
+    "gulp-webserver": "^0.9.1",
+    "webpack-stream": "^5.2.1"
+  }
+}
