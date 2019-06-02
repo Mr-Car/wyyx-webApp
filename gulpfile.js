@@ -2,40 +2,92 @@ const {
     src,
     dest,
     series,
-    parallel
+    parallel,
+    watch
 } = require("gulp")
 const server = require('gulp-webserver')
 const webStream = require('webpack-stream')
+const gulpSass = require("gulp-sass")
+const proxy = require("http-proxy-middleware")
 
-function webserver() {
+
+// 服务器
+function webserver() { 
     return src("../day06---productStart")
         .pipe(server({
             port: 8888,
             livereload: true,
             directoryListing: true,
-            open: true
+            open: './dev/index.html',
+            middleware: [
+                proxy('/api', {
+                    target: "http://www.baidu.com", //代理域名
+                    changeOrigin: true, //不同域名访问，需要配置为true
+                    pathRewrite:{
+                        '^/api':'abc.com'  //代理接口地址
+                    }
+
+                })
+            ]
         }))
 
+}
+// 复制lib
+function copyLib() {
+    return src('./src/lib/**/*')
+        .pipe(dest('./dev/lib'))
 }
 // 复制html
 function copyHtml() {
     return src("./src/*.html")
         .pipe(dest("./dev"))
 }
+// 编译CSS
+function packCss() {
+    return src("./src/styles/app.scss")
+        .pipe(gulpSass().on('error', gulpSass.logError))
+        .pipe(dest("./dev/styles"))
+}
 // 打包js
 function packJs() {
-    return src("./src/app.js")
+    return src("./src/**/*")
         .pipe(webStream({
-            mode:'development', //开发环境，编译后不压缩
-            entry:{ //入口
-                app:'./src/app.js',
+            mode: 'development', //开发环境，编译后不压缩
+            entry: { //入口
+                app: './src/app.js',
             },
-            output:{
-                filename:'[name].js',    //[name] == app 
-                path:__dirname + '/dev/'
+            output: {
+                filename: '[name].js', //[name] == app 
+                path: __dirname + '/dev/'
+            },
+            module: {
+                rules: [{
+                        test: /\.js$/,
+                        exclude: /node_modules/,
+                        use: {
+                            loader: "babel-loader", //用来编译ES6等语法糖从而支持IE低版本
+                            options: {
+                                presets: ['@babel/preset-env'],
+                                plugins: ['@babel/plugin-transform-runtime']
+                            }
+                        }
+                    },
+                    {
+                        test: /\.art$/,
+                        loader: "string-loader"
+                    }
+                ]
             }
         }))
         .pipe(dest('./dev'))
 }
+// watch
+function watcher(){
+    watch('./src/styles/**/*',series(packCss))
+    watch('./src/lib/**/*',series(copyLib))
+    watch('./*html',series(copyHtml))
+    watch(['./src/**/*','!src/lib/**/*','!src/styles/**/*'],series(packJs))
+}
 
-exports.default = series(copyHtml, packJs, webserver);
+
+exports.default = series(parallel(packCss, packJs), parallel(copyHtml, copyLib), webserver,watcher);
