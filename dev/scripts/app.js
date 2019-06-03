@@ -149,7 +149,7 @@ eval("// ES6规范\n// export const name= \"车心伟\";\n//commonJS规范\nmodu
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = {\n  list: function list() {\n    $.ajax({\n      url: \"/myjson/xhr/item/rcmd.json?__timestamp=1558770688934&itemId=1076003\",\n      data: {},\n      success: function success(result) {\n        console.log(result);\n      }\n    });\n  }\n};\n\n//# sourceURL=webpack:///./src/controllers/position.js?");
+eval("module.exports = {\n  list: function list() {\n    $.ajax({\n      url: \"/json/result\",\n      data: {\n        \"id\": 2222222,\n        \"positionName\": \"高级销售（贵阳）2\",\n        \"city\": \"杭州2\",\n        \"createTime\": \"今天 15:09\",\n        \"salary\": \"115k-125k\",\n        \"companyId\": 320570,\n        \"companyLogo\": \"i/image2/M01/AF/2A/CgoB5lv3unmANwz0AAAG-i-dV_I198.png\",\n        \"companyName\": \"校宝在线2\",\n        \"companyFullName\": \"校宝在线（杭州）科技股份有限公司2\"\n      },\n      type: \"POST\",\n      success: function success(result) {\n        console.log(result);\n      }\n    });\n  }\n};\n\n//# sourceURL=webpack:///./src/controllers/position.js?");
 
 /***/ }),
 

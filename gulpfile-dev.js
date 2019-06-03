@@ -28,7 +28,10 @@ function webserver() {
                     }
                 }),
                 proxy('/json',{
-                    target : "http://localhost:9000/"
+                    target : "http://localhost:9000",
+                    pathRewrite:{
+                        '^/json':''
+                    }
                 }),
                 proxy('/myjson',{
                     target:"http://you.163.com",
