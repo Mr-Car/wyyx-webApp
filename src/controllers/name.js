@@ -7,7 +7,7 @@ module.exports={
     getName:function(){
          return new Promise((resolve,reject)=>{
             setTimeout(()=>{
-                resolve("chexinwei6666666666666666666");
+                resolve("chexinwei6666666666666666666")
              },2000)
          })
     }

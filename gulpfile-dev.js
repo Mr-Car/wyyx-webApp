@@ -26,7 +26,9 @@ function webserver() {
                     pathRewrite:{
                         '^/api':'abc.com'  //代理接口地址
                     }
-
+                }),
+                proxy('/json',{
+                    target : "http://localhost:9000/"
                 })
             ]
         }))
@@ -83,10 +85,10 @@ function packJs() {
 }
 // watch
 function watcher(){
+    watch('./src/*.html',series(clear('./dev/*.html'),copyHtml))
     watch('./src/styles/**/*',series(clear('./dev/styles'),packCss))
     watch('./src/lib/**/*',series(clear('./dev/lib'),copyLib))
-    watch('./*html',series(clear('./dev/*.html'),copyHtml))
-    watch(['./src/**/*','!src/lib/**/*','!src/styles/**/*','!*.html'],series(series(clear('./dev/scripts'),packJs)))
+    watch(['./src/**/*','!src/lib/**/*','!src/styles/**/*','!src/*.html'],series(series(clear('./dev/scripts'),packJs)))
 }
 
 function clear (target){

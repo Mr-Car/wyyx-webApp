@@ -3,19 +3,18 @@
 // console.log(name);
 
 // commonJS规范
-const Name = require("./controllers/name");
-const aaTpl=require("./views/aaa.art");
-
-
+const Name = require("./controllers/name")
+const aaTpl=require("./views/aaa.art")
+const {list} =require("./controllers/position")
 
 async function getName(){
-    console.log(Name.name);
-    let name =await Name.getName();
-    console.log(name);
+    console.log(Name.name)
+    let name =await Name.getName()
+    console.log(name)
 }
-getName();
+getName()
 
-let testHtml=template.render(aaTpl,{title:"车心伟"});
-console.log(testHtml);
+let testHtml=template.render(aaTpl,{title:"车心伟"})
+console.log(testHtml)
 
-
+list()
