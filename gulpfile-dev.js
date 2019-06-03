@@ -9,7 +9,7 @@ const server = require('gulp-webserver')
 const webStream = require('webpack-stream')
 const gulpSass = require("gulp-sass")
 const proxy = require("http-proxy-middleware")
-
+const del = require("del")
 
 // 服务器
 function webserver() { 
@@ -79,14 +79,20 @@ function packJs() {
                 ]
             }
         }))
-        .pipe(dest('./dev'))
+        .pipe(dest('./dev/scripts'))
 }
 // watch
 function watcher(){
-    watch('./src/styles/**/*',series(packCss))
-    watch('./src/lib/**/*',series(copyLib))
-    watch('./*html',series(copyHtml))
-    watch(['./src/**/*','!src/lib/**/*','!src/styles/**/*'],series(packJs))
+    watch('./src/styles/**/*',series(clear('./dev/styles'),packCss))
+    watch('./src/lib/**/*',series(clear('./dev/lib'),copyLib))
+    watch('./*html',series(clear('./dev/*.html'),copyHtml))
+    watch(['./src/**/*','!src/lib/**/*','!src/styles/**/*','!*.html'],series(series(clear('./dev/scripts'),packJs)))
+}
+
+function clear (target){
+    return function (){
+        return del(target)
+    }
 }
 
 
