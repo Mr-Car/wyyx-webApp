@@ -1,7 +1,11 @@
 module.exports={
     list(){
         $.ajax({
-            
+            url:"/myjson/xhr/item/rcmd.json?__timestamp=1558770688934&itemId=1076003",
+            data:{},
+            success(result){
+                console.log(result)
+            }
         })
     }
 }

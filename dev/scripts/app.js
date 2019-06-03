@@ -149,7 +149,7 @@ eval("// ES6规范\n// export const name= \"车心伟\";\n//commonJS规范\nmodu
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = {\n  list: function list() {\n    $.ajax({});\n  }\n};\n\n//# sourceURL=webpack:///./src/controllers/position.js?");
+eval("module.exports = {\n  list: function list() {\n    $.ajax({\n      url: \"/myjson/xhr/item/rcmd.json?__timestamp=1558770688934&itemId=1076003\",\n      data: {},\n      success: function success(result) {\n        console.log(result);\n      }\n    });\n  }\n};\n\n//# sourceURL=webpack:///./src/controllers/position.js?");
 
 /***/ }),
 

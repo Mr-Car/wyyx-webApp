@@ -24,11 +24,18 @@ function webserver() {
                     target: "http://www.baidu.com", //代理域名
                     changeOrigin: true, //不同域名访问，需要配置为true
                     pathRewrite:{
-                        '^/api':'abc.com'  //代理接口地址
+                        '^/api':''  //代理接口地址
                     }
                 }),
                 proxy('/json',{
                     target : "http://localhost:9000/"
+                }),
+                proxy('/myjson',{
+                    target:"http://you.163.com",
+                    changeOrigin: true, 
+                    pathRewrite:{
+                        '^/myjson':''
+                    }
                 })
             ]
         }))
