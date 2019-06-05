@@ -4,17 +4,35 @@
 
 // commonJS规范
 const Name = require("./controllers/name")
-const aaTpl=require("./views/aaa.art")
-const {list} =require("./controllers/position")
-
-async function getName(){
+async function getName() {
     console.log(Name.name)
-    let name =await Name.getName()
+    let name = await Name.getName()
     console.log(name)
 }
 getName()
 
-let testHtml=template.render(aaTpl,{title:"车心伟"})
-console.log(testHtml)
+// 首页
+const index = require("./views/index.html")
+const {
+    ajax
+} = require('./controllers/ajax') //ajax模块
 
-list()
+async function getIndexHtml() { //填充首页数据
+    let indexJson = await ajax("http://localhost:9000/index");
+    console.log(indexJson);
+    let testHtml = template.render(index, indexJson)
+    $("#app").html(testHtml)
+    // 轮播图
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+            }
+        },
+        loop: true
+    })
+}
+getIndexHtml();

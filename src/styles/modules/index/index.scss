@@ -1,0 +1,357 @@
+@import '../common/icons.scss';
+@import '../common/font-size.scss';
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 32vw;
+  background: #ffffff;
+}
+
+body {
+  font-size: .116667rem;
+}
+
+a {
+  color: #000;
+}
+
+.bgF5 {
+  background: #F5F5F5;
+}
+.box100{
+  width: 100%;
+}
+.img100{
+  width:100%;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ex-header {
+  height: .625rem;
+  font-size: .116667rem;
+}
+
+.ex-header .top {
+  padding: .066667rem .125rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+
+  h1 {
+    margin-right: .083333rem;
+
+    img {
+      height: .166667rem;
+    }
+  }
+
+  a {
+    display: block;
+  }
+
+  .search {
+    width: 1.841667rem;
+    height: .233333rem;
+    line-height: .233333rem;
+    background: #EDEDED;
+    border-radius: .033333rem;
+    line-height: .233333rem;
+    display: flex;
+    justify-content: space-around;
+
+    >div {
+      display: flex;
+      align-items: center;
+
+      .icon-search {
+        width: .116667rem;
+        height: .116667rem;
+        display: inline-block;
+        background: url("../img/search2_553dba3aff.png")no-repeat;
+        background-size: .116667rem .116667rem;
+        margin-right: .041667rem;
+      }
+
+      .font-search {
+        width: 1.333333rem;
+        height: .166667rem;
+        font-size: .116667rem;
+        line-height: .166667rem;
+        color: #666666;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .login {
+    width: .308333rem;
+    height: .166667rem;
+    font-size: .1rem;
+    margin-left: 8px;
+    color: #b4282d;
+    border: 1px solid #b4282d;
+    border-radius: .033333rem;
+    line-height: .166667rem;
+    text-align: center;
+  }
+}
+
+.top-nav {
+  height: .25rem;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    padding-left: .125rem;
+    font-size: .116667rem;
+
+    li {
+      padding: 0 .066667rem;
+      margin-left: .083333rem;
+    }
+
+    .empty {
+      width: .083333rem;
+      height: 30px;
+    }
+
+    .jiantou {
+      width: 50px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        width: .125rem;
+        height: .125rem;
+        background: url("../img/arrow_down_3_799ded53ea.png") no-repeat;
+        background-size: .125rem .125rem;
+        display: block;
+      }
+    }
+  }
+}
+
+
+main {
+  width: 100%;
+  overflow: scroll;
+  font-size: .1rem;
+  flex: 1;
+  padding: 0 0 .416667rem 0;
+  background: #F4F4F4;
+  .banner {
+    img {
+      height: 1.541667rem;
+    }
+  }
+
+  .main-nav {
+    height: .3rem;
+    padding: 0 .125rem;
+
+    ul {
+      line-height: .3rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      li {
+        a {
+          color: #B4282D;
+        }
+
+        span {
+          display: inline-block;
+          width: .133333rem;
+          height: .133333rem;
+          vertical-align: middle;
+          margin-right: .033333rem;
+        }
+      }
+    }
+  }
+
+  .nav-list {
+    height: 1.416667rem;
+    margin-bottom: .133333rem;
+    background: #ffffff;
+    ul {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      li {
+        margin: .041667rem .083333rem .0375rem .083333rem;
+        width: .458333rem;
+        height: .65rem;
+
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+
+          figure {
+            img {
+              width: .458333rem;
+              height: .458333rem;
+            }
+
+            figcaption {
+              text-align: center;
+              width: .458333rem;
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+  // 618人气商品模块 开始
+  .popularity {
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: .083333rem;
+
+    .gif618 {
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .sort618 {
+      width: 100%;
+
+      .floor {
+        width: 100%;
+        padding: 0 .083333rem;
+        display: flex;
+        justify-content: space-between;
+
+        a {
+          display: block;
+
+          img {
+            width: 1.4625rem;
+          }
+        }
+
+        &:first-child {
+          margin-bottom: .033333rem;
+        }
+      }
+
+    }
+  }
+
+  // 618人气商品模块 结束
+  .mid-ad {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  // 超值分类 开始
+  .m-sceneLightShoppingGuideModule {
+    background: #ffffff;
+    width: 100%;
+    height: 2.4rem;
+    padding: .041667rem .125rem .125rem .108333rem;
+    margin-bottom: .083333rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    .sort {
+      width: 1.429rem;
+      height: 1.1rem;
+      padding: .083333rem 0 0 .083333rem;
+      border-radius: .016667rem;
+
+      .tit {
+        font-size: .133333rem;
+        line-height: .2rem;
+      }
+
+      .desc {
+        font-size: .1rem;
+        line-height: .15rem;
+        color: #7F7F7F;
+      }
+
+      .img {
+
+        img {
+          width: .625rem;
+          height: .625rem;
+          ;
+        }
+      }
+    }
+  }
+
+  // 超值分类 结束
+
+
+
+}
+
+
+
+
+
+
+// 尾巴
+.ex-footer {
+  height: .408333rem;
+
+  div {
+    height: 100%;
+    ;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: .1rem;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: .2rem;
+      height: .3rem;
+      text-align: center;
+    }
+
+    .icon-footer {
+      display: inline-block;
+      background: url("../img/tabBar_s43a0dc8a7d_de25ef8e19.png")no-repeat;
+      display: block;
+      width: .166667rem;
+      height: .166667rem;
+      background-position: 0 -0.833333rem;
+      background-size: .166667rem 2.041667rem;
+    }
+  }
+}

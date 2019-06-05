@@ -1,7 +1,9 @@
-const list = require("./listmore.json")
+const index = require("./index.json")
+const list = require("./list.json")
 
 module.exports= function(){
     return {
-        list
+        list,
+        index
     }
 }

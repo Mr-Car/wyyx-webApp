@@ -20,23 +20,17 @@ function webserver() {
             directoryListing: true,
             open: './dev/index.html',
             middleware: [
-                proxy('/api', {
-                    target: "http://www.baidu.com", //代理域名
+                proxy('/json/index', {
+                    target: "http://localhost:9000/", //代理域名
                     changeOrigin: true, //不同域名访问，需要配置为true
-                    pathRewrite:{
-                        '^/api':''  //代理接口地址
-                    }
+                    // pathRewrite:{
+                    //     '^/json':''  //代理接口地址
+                    // }   
                 }),
-                proxy('/json',{
+                proxy('/json/list',{     //商品分类下的数据
                     target : "http://localhost:9000/"
-                }),
-                proxy('/myjson',{
-                    target:"http://you.163.com",
-                    changeOrigin: true, 
-                    pathRewrite:{
-                        '^/myjson':''
-                    }
                 })
+                
             ]
         }))
 
@@ -51,12 +45,26 @@ function copyHtml() {
     return src("./src/*.html")
         .pipe(dest("./dev"))
 }
+
+// 复制icon
+function copyIcon() {
+    return src("./src/icons/**/*")
+        .pipe(dest("./dev/icons"))
+}
+
 // 编译CSS
 function packCss() {
     return src("./src/styles/app.scss")
         .pipe(gulpSass().on('error', gulpSass.logError))
         .pipe(dest("./dev/styles"))
 }
+
+//复制CSS
+function copyCss() {
+    return src("./src/styles/lib/**/*")
+        .pipe(dest("./dev/styles/lib"))
+}
+
 // 打包js
 function packJs() {
     return src("./src/**/*")
@@ -82,7 +90,7 @@ function packJs() {
                         }
                     },
                     {
-                        test: /\.art$/,
+                        test: /\.html$/,
                         loader: "string-loader"
                     }
                 ]
@@ -93,9 +101,10 @@ function packJs() {
 // watch
 function watcher(){
     watch('./src/*.html',series(clear('./dev/*.html'),copyHtml))
-    watch('./src/styles/**/*',series(clear('./dev/styles'),packCss))
+    watch('./src/styles/**/*',series(clear('./dev/styles'),copyCss,packCss))
+    watch('./src/icons/**/*',series(clear('./dev/icons'),copyIcon))
     watch('./src/lib/**/*',series(clear('./dev/lib'),copyLib))
-    watch(['./src/**/*','!src/lib/**/*','!src/styles/**/*','!src/*.html'],series(series(clear('./dev/scripts'),packJs)))
+    watch(['./src/**/*','!src/lib/**/*','!src/styles/**/*','!src/*.html','!src/icon/**/*'],series(series(clear('./dev/scripts'),packJs)))
 }
 
 function clear (target){
@@ -105,4 +114,4 @@ function clear (target){
 }
 
 
-exports.default = series(parallel(packCss, packJs), parallel(copyHtml, copyLib), webserver,watcher);
+exports.default = series(parallel(packCss, packJs), parallel(copyHtml, copyLib,copyCss,copyIcon), webserver,watcher);
