@@ -64,6 +64,17 @@ function copyCss() {
     return src("./src/styles/lib/**/*")
         .pipe(dest("./dev/styles/lib"))
 }
+//复制img
+function copyImg() {
+    return src("./src/img/**/*")
+        .pipe(dest("./dev/img"))
+}
+
+//复制mock中的json
+function copyJson() {
+    return src("./src/mock/*.json")
+        .pipe(dest("./dev/mock"))
+}
 
 // 打包js
 function packJs() {
@@ -101,10 +112,12 @@ function packJs() {
 // watch
 function watcher(){
     watch('./src/*.html',series(clear('./dev/*.html'),copyHtml))
+    watch('./src/img/**/*',series(clear('./dev/img'),copyImg))
+    watch('./src/mock/*.json',series(clear('./dev/mock/*.json'),copyJson))
     watch('./src/styles/**/*',series(clear('./dev/styles'),copyCss,packCss))
     watch('./src/icons/**/*',series(clear('./dev/icons'),copyIcon))
     watch('./src/lib/**/*',series(clear('./dev/lib'),copyLib))
-    watch(['./src/**/*','!src/lib/**/*','!src/styles/**/*','!src/*.html','!src/icon/**/*'],series(series(clear('./dev/scripts'),packJs)))
+    watch(['./src/**/*','!src/lib/**/*','!src/styles/**/*','!src/*.html','!src/icon/**/*','!src/mock/*.json','!src/img/**/*'],series(series(clear('./dev/scripts'),packJs)))
 }
 
 function clear (target){
@@ -114,4 +127,4 @@ function clear (target){
 }
 
 
-exports.default = series(parallel(packCss, packJs), parallel(copyHtml, copyLib,copyCss,copyIcon), webserver,watcher);
+exports.default = series(parallel(packCss, packJs), parallel(copyHtml, copyLib,copyCss,copyIcon,copyJson,copyImg), webserver,watcher);
