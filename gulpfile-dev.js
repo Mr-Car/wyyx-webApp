@@ -23,9 +23,9 @@ function webserver() {
                 proxy('/json/index', {
                     target: "http://localhost:9000/", //代理域名
                     changeOrigin: true, //不同域名访问，需要配置为true
-                    // pathRewrite:{
-                    //     '^/json':''  //代理接口地址
-                    // }   
+                    pathRewrite:{
+                        '^/json':''  //代理接口地址
+                    }   
                 }),
                 proxy('/json/list',{     //商品分类下的数据
                     target : "http://localhost:9000/"

@@ -1,14 +1,5 @@
 module.exports={
-    list(){
-        // 请求首页列表数据
-        $.ajax({
-            url:"/myjson/xhr/item/rcmd.json?__timestamp=1558770688934&itemId=1076003",
-            data:{},
-            success(result){
-                console.log(result)
-            }
-        })
-
+    BetterScroll(){
         // 滚动实例化
         let bScroll = new BScroll('#index-scroll',{ 
             // 1为非实时触发scroll事件，2为实时触发，3不仅实时触发还在···中触发

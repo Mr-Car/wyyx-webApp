@@ -1,162 +1,112 @@
-<article class="box">
-    <header class="ex-header">
-        <div class="top">
-            <h1><a href=""><img src="./img/indexLogo_a90bdaae6b.png" alt=""></a></h1>
-            <a class="search" href="">
-                <div>
-                    <span class="icon-search"></span>
-                    <span class="font-search">搜索商品, 共22705款好物</span>
+
+<section>
+        <!-- 轮播图 开始 -->
+        <div class="banner">
+            <div class="swiper-banner swiper-container">
+                <div class="swiper-wrapper">
+                    {{each focusList}}
+                    <div class="swiper-slide"><img src="{{$value.picUrl}}" alt=""></div>
+                    {{/each}}
                 </div>
-            </a>
-            <a class="login" href="">登录</a>
+                <div class="banner-pagination swiper-pagination"></div>
+            </div>
         </div>
-        <nav class="top-nav">
+        <!-- 轮播图 结束 -->
+
+        <!-- 中部菜单 开始 -->
+        <nav class="main-nav">
             <ul>
-                <li><a href="">推荐</a></li>
-                <li><a href="">居家生活</a></li>
-                <li><a href="">服饰鞋包</a></li>
-                <li><a href="">美食酒水</a></li>
-                <div class="empty"></div>
-                <div class="jiantou">
-                    <span></span>
-                </div>
+                {{each policyDescList }}
+                <li><span
+                        style="background: url('{{$value.icon}}')no-repeat;background-size: .133333rem .133333rem;"></span><a
+                        href="">{{$value.desc}}</a></li>
+                {{/each}}
             </ul>
         </nav>
-    </header>
-    <main>
-        <section>
-            <!-- 轮播图 开始 -->
-            <div class="banner">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        {{each focusList}}
-                        <div class="swiper-slide"><img src="{{$value.picUrl}}" alt=""></div>
-                        {{/each}}
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-            <!-- 轮播图 结束 -->
-
-            <!-- 中部菜单 开始 -->
-            <nav class="main-nav">
-                <ul>
-                    {{each policyDescList }}
-                    <li><span
-                            style="background: url('{{$value.icon}}')no-repeat;background-size: .133333rem .133333rem;"></span><a
-                            href="">{{$value.desc}}</a></li>
-                    {{/each}}
-                </ul>
-            </nav>
-            <div class="nav-list">
-                <ul>
-                    {{each kingKongModule.kingKongList $kingVal}}
-                    <li>
-                        <a href="{{$kingVal.schemeUrl}}">
-                            <figure><img src="{{$kingVal.picUrl}}" alt="">
-                                <figcaption>{{$kingVal.text}}</figcaption>
-                            </figure>
-                        </a>
-                    </li>
-                    {{/each}}
-                </ul>
-            </div>
-            <!-- 中部菜单 结束 -->
-
-            <!-- 618模块 开始 -->
-            <div class="popularity" style="background: url('{{bigPromotionModule.backgroundUrl}}') no-repeat">
-                <div class="gif618">
-                    <img src="{{bigPromotionModule.floorList[0].cells[0].picUrl}}" alt="">
-                </div>
-                <div class="sort618">
-                    <div class="floor">
-                        {{each bigPromotionModule.floorList[1].cells}}
-                        <a href="{{$value.schemeUrl}}">
-                            <img src="{{$value.picUrl}}" alt="">
-                        </a>
-                        {{/each}}
-                    </div>
-                    <div class="floor">
-                        {{each bigPromotionModule.floorList[2].cells}}
-                        <a href="{{$value.schemeUrl}}">
-                            <img src="{{$value.picUrl}}" alt="">
-                        </a>
-                        {{/each}}
-                    </div>
-                </div>
-            </div>
-            <!-- 618模块 结束 -->
-            <div class="mid-ad">
-                <img src="{{bossRecommendModule.picUrl}}" alt="">
-            </div>
-
-            <!-- 超值分类 开始 -->
-            <div class="m-sceneLightShoppingGuideModule">
-                {{each sceneLightShoppingGuideModule}}
-                <div class="sort bgF5">
-                    <div class="tit">{{$value.styleItem.title}}</div>
-                    <div class="desc">{{$value.styleItem.desc}}</div>
-                    <div class="img">
-                        <img src="{{$value.styleItem.picUrlList[0]}}" alt="">
-                        <img src="{{$value.styleItem.picUrlList[1]}}" alt="">
-                    </div>
-                </div>
+        <div class="main-nav-list">
+            <ul>
+                {{each kingKongModule.kingKongList $kingVal}}
+                <li>
+                    <a href="{{$kingVal.schemeUrl}}">
+                        <figure><img src="{{$kingVal.picUrl}}" alt="">
+                            <figcaption>{{$kingVal.text}}</figcaption>
+                        </figure>
+                    </a>
+                </li>
                 {{/each}}
-            </div>
-
-            <!-- 超值分类 结束 -->
-
-            <!-- 618进口 开始 -->
-            <div class="box100">
-                <img class="img100" src="{{categoryModule[0].titlePicUrl}}" alt="">
-            </div>
-            <!-- 618进口 结束 -->
-
-            <!-- 618居家购物趴 开始 -->
-            <div class="box100">
-                <img class="img100" src="{{categoryModule[1].titlePicUrl}}" alt="">
-            </div>
-            <!-- 618居家购物趴 结束 -->
-
-            <!-- 618美妆个护 开始 -->
-            <div class="box100">
-                <img class="img100" src="{{categoryModule[2].titlePicUrl}}" alt="">
-            </div>
-            <!-- 618美妆个护 结束 -->
-
-            <!-- 618婴童孕产 开始 -->
-            <div class="box100">
-                <img class="img100" src="{{categoryModule[3].titlePicUrl}}" alt="">
-            </div>
-            <!-- 618婴童孕产 结束 -->
-
-            <!-- 618情趣来袭 开始 -->
-            <div class="box100">
-                <img class="img100" src="{{categoryModule[4].titlePicUrl}}" alt="">
-            </div>
-            <!-- 618情趣来袭 结束 -->
-
-
-        </section>
-    </main>
-    <footer class="ex-footer">
-        <div>
-            <a href="#">
-                <span class="icon-footer"></span>
-                <span class="font-footer">首页</span>
-            </a>
-            <a href="#">
-                <span class="icon-footer"></span>
-                <span class="font-footer">首页</span>
-            </a>
-            <a href="#">
-                <span class="icon-footer"></span>
-                <span class="font-footer">首页</span>
-            </a>
-            <a href="#">
-                <span class="icon-footer"></span>
-                <span class="font-footer">首页</span>
-            </a>
+            </ul>
         </div>
-    </footer>
-</article>
+        <!-- 中部菜单 结束 -->
+
+        <!-- 618模块 开始 -->
+        <div class="popularity" style="background: url('{{bigPromotionModule.backgroundUrl}}') no-repeat">
+            <div class="gif618">
+                <img src="{{bigPromotionModule.floorList[0].cells[0].picUrl}}" alt="">
+            </div>
+            <div class="sort618">
+                <div class="floor">
+                    {{each bigPromotionModule.floorList[1].cells}}
+                    <a href="{{$value.schemeUrl}}">
+                        <img src="{{$value.picUrl}}" alt="">
+                    </a>
+                    {{/each}}
+                </div>
+                <div class="floor">
+                    {{each bigPromotionModule.floorList[2].cells}}
+                    <a href="{{$value.schemeUrl}}">
+                        <img src="{{$value.picUrl}}" alt="">
+                    </a>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <!-- 618模块 结束 -->
+        <div class="mid-ad">
+            <img src="{{bossRecommendModule.picUrl}}" alt="">
+        </div>
+
+        <!-- 超值分类 开始 -->
+        <div class="m-sceneLightShoppingGuideModule">
+            {{each sceneLightShoppingGuideModule}}
+            <div class="sort bgF5">
+                <div class="tit">{{$value.styleItem.title}}</div>
+                <div class="desc">{{$value.styleItem.desc}}</div>
+                <div class="img">
+                    <img src="{{$value.styleItem.picUrlList[0]}}" alt="">
+                    <img src="{{$value.styleItem.picUrlList[1]}}" alt="">
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        <!-- 超值分类 结束 -->
+
+        <!-- 618展示模块 -->
+        {{each categoryModule $cate}}
+        <div class="cate  box100">
+            <img class="img100 cate-img" src="{{$cate.titlePicUrl}}" alt="">
+            <div class="cate-swiper swiper-container">
+                <div class="cate-item swiper-wrapper">
+                    {{each $cate.itemList}}
+                    <div class="item-box swiper-slide">
+                        <div class="bgF5">
+                            <img class="item-img" src="{{$value.showPicUrl}}" alt="">
+                        </div>
+                        <div class="item-name">{{$value.name}}</div>
+                        <div class="item-price">
+                            <span class="counterPrice">￥{{$value.counterPrice}}</span>
+                            <span class="retailPrice">￥{{$value.retailPrice}}</span>
+                        </div>
+                        {{if $value.promTag}}
+                        <div class="item-state">{{$value.promTag}}</div>
+                        {{/if}}
+                        <div class="item-tag"></div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+
+    </section>
