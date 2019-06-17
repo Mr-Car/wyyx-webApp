@@ -1,0 +1,28 @@
+<div class="nav-tit">
+    {{categoryItems.category.frontName}}
+</div>
+
+<div class="list-items">
+    <ul>
+        {{each categoryItems.itemList}}
+        <li class="item">
+            <a href="#/productDetail">
+                <img src="{{$value.listPicUrl}}" alt="">
+                <div class="item-promDesc">{{$value.promDesc}}</div>
+                <div class="promTitle">
+                    <span>{{$value.listPromBanner.promoTitle}}</span>
+                    <span>{{$value.listPromBanner.promoSubTitle}}</span>
+                </div>
+                <div class="remaining">{{$value.listPromBanner.content}}</div>
+                <img class="logo618" src="https://yanxuan.nosdn.127.net/3e2ab1392221f487ac554f98f13369dc.png" alt="">
+                <div class="item-desc">
+                    <p class="desc-tit">{{$value.name}}</p>
+                    <div class="desc-price"><span>￥{{$value.retailPrice}}</span><span>￥{{$value.counterPrice}}</span>
+                    </div>
+                    <p class="desc-now">{{$value.promTag}}</p>
+                </div>
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+</div>

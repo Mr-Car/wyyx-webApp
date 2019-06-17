@@ -1,0 +1,288 @@
+.productDetail {
+    .productDetail-swiper {
+        img {
+            width: 3.125rem;
+            height: 3.125rem;
+        }
+    }
+
+    .arrow {
+        width: .208333rem;
+        height: .208333rem;
+        background: url(//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/address-right-a13dd77ade.png) no-repeat;
+        background-size: 100% 100%;
+        position: absolute;
+        right: .083333rem;
+        top: 20%;
+    }
+
+    .content {
+        width: 100%;
+        height: .5rem;
+        background: #EB0036;
+        display: flex;
+        color: #ffffff;
+
+        .content-tit {
+            width: .533333rem;
+            height: .5rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .content-price {
+            flex: 1;
+            height: 100%;
+
+            .tit {
+                height: .15rem;
+                line-height: .15rem;
+                margin: .05rem 0 0 .1rem;
+            }
+
+            .price {
+                height: .3rem;
+                margin-left: .1rem;
+
+                .activityPrice {
+                    font-size: .2rem;
+                    font-weight: 700;
+                    line-height: .3rem;
+                }
+
+                .retailPrice {
+                    margin-left: .033333rem;
+                    font-size: .1rem;
+                }
+            }
+        }
+
+        .time {
+            width: .875rem;
+            line-height: .5rem;
+        }
+    }
+
+    .m-promBanner {
+        height: .675rem;
+        padding: .108333rem 0 .15rem .125rem;
+        display: flex;
+        align-items: center;
+        background: #ffffff;
+
+        .tit {
+            flex: 1;
+            height: .358333rem;
+
+            div {
+                &:first-child {
+                    font-size: .133333rem;
+                    color: #333333;
+                    height: .2rem;
+                    line-height: .2rem;
+                    margin-bottom: .008333rem;
+                }
+
+                &:last-child {
+                    font-size: .1rem;
+                    height: .15rem;
+                    line-height: .15rem;
+                    color: #7f7f7f;
+                }
+            }
+        }
+
+        .evaluate {
+            width: .741667rem;
+            height: .358333rem;
+            border-left: 1px dashed #D9D9D9;
+            position: relative;
+
+            .box {
+                height: .333333rem;
+                padding-left: .083333rem;
+
+                .num {
+                    font-size: .133333rem;
+                    color: #B4282D;
+                    line-height: .1875rem;
+                    font-weight: 700;
+                }
+
+                .tit {
+                    font-size: .1rem;
+                    line-height: .15rem;
+                    color: #7f7f7f;
+                }
+            }
+
+            .arrow {
+                width: .208333rem;
+                height: .208333rem;
+                background: url(//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/address-right-a13dd77ade.png) no-repeat;
+                background-size: 100% 100%;
+                position: absolute;
+                right: .083333rem;
+                top: 20%;
+            }
+        }
+    }
+
+    .bonusBanner {
+        height: .466667rem;
+        margin-top: .083333rem;
+        display: flex;
+        align-items: center;
+        padding: .133333rem 0 .133333rem .125rem;
+        background: #ffffff;
+        justify-content: space-between;
+
+        .tit {
+            width: .658333rem;
+            height: .125rem;
+            border-radius: .066667rem;
+            background-image: linear-gradient(90deg, #FF2C30 0, #FF8659 100%);
+            color: #ffffff;
+            line-height: .125rem;
+            text-align: center;
+            margin-right: .066667rem;
+        }
+
+        .desc {
+            flex: 1;
+        }
+
+        .go {
+            width: .708333rem;
+            height: .2rem;
+            font-size: .1rem;
+            border: 1px solid #FF2E31;
+            color: #FF2E31;
+            line-height: .2rem;
+            text-align: center;
+            border-radius: .1rem;
+            margin-right: .1375rem;
+            padding: 0 .095833rem;
+        }
+    }
+    .cart{
+        margin-top: .083333rem;
+        height: 2.083333rem;
+        background: #ffffff;
+        padding-left: .125rem;
+        font-size: .116667rem;
+        .inner{
+            position: relative;
+            height: .441667rem;
+            border-bottom: 1px solid #D9D9D9;
+            display: flex;
+            align-items: center;
+        }
+        .addressSelect{
+            color: #7F7F7F;
+        }
+        .service{
+            .inner{
+                height: .741667rem;
+                border: 0;
+                .tit{
+                    width: .383333rem;
+                }
+                .serviceList{
+                    ul{
+                        width: 2.366667rem;
+                        display: flex;
+                        flex-wrap: wrap;
+                        li{
+                            line-height: .108333rem;
+                            margin: 0 .166667rem .066667rem 0;
+                            padding-left: .066667rem;
+                            color:#7F7F7F;
+                            position: relative;
+                            &::after{
+                                content: "";
+                                position: absolute;
+                                width: .033333rem;
+                                height: .033333rem;
+                                background: #b4282d;
+                                border-radius: 100%;
+                                left: 0;
+                                top: .041667rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        }
+        .m-shoppingReward {
+        height: .433333rem;
+        margin-top: .083333rem;
+        padding: .133333rem 0 .133333rem .125rem;
+        background: #ffffff;
+        font-size: .116667rem;
+        .hint{
+            color: #DD1A21;
+        }
+    }
+
+    .adBanners {
+        height: .833333rem;
+
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: .833333rem;
+            }
+        }
+    }
+
+    .detailHtml {
+        img {
+            width: 100%;
+        }
+    }
+
+    .detail-footer{
+        position: fixed;
+        z-index: 100;
+        background: #ffffff;
+        bottom: 0;
+        width: 100%;
+        height: .433333rem;
+        font-size: .116667rem;
+        display: flex;
+        align-items: center;
+        .kefu{
+            background: url("//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/detail-kefu-d10f0489d2.png")no-repeat center center;
+            width: .65rem;
+            height: 100%;
+            background-size: .25rem .25rem;
+            border: 1px solid #E3E3E3;
+        }
+        .buy{
+            width: 1.2375rem;
+            height: 100%;
+            border: 1px solid #E3E3E3;
+            border-right: 0;
+            color: #333333;
+            text-align: center;
+            line-height: .433333rem;
+        }
+        .addCart{
+            line-height: .433333rem;
+            text-align: center;
+            width: 1.2375rem;
+            height: 100%;
+            background:#B4282D;
+            color: #ffffff;
+        }
+    }
+}

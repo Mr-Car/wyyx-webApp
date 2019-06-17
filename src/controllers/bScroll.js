@@ -26,7 +26,7 @@ module.exports={
         })
 
         // 滑动松手结束事件
-        bScroll.on('scollEnd',function(){
+        bScroll.on('scrollEnd',function(){
 
         })
 

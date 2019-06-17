@@ -1,0 +1,17 @@
+<div class="details-header">
+    <div class="left"><a href="#/">&#xe601;</a></div>
+    <div class="logo"><img src="../dev/img/indexLogo_a90bdaae6b.png" alt=""></div>
+    <div class="right">
+        <a href="#/search"><img src="../dev/img//search2_553dba3aff.png" alt=""></a>
+        <a href="#/cart">&#xe600;</a>
+    </div>
+</div>
+<div class="details-nav">
+    <div class="details-nav-list swiper-container">
+        <div class="swiper-wrapper">
+            {{each categoryL2List}}
+            <div class="nav-item swiper-slide">{{$value.name}}</div>
+            {{/each}}
+        </div>
+    </div>
+</div>

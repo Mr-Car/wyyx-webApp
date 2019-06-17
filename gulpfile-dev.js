@@ -21,14 +21,14 @@ function webserver() {
             open: './dev/index.html',
             middleware: [
                 proxy('/json/index', {
-                    target: "http://localhost:9000/", //代理域名
+                    target: "http://10.9.65.195:9000/", //代理域名
                     changeOrigin: true, //不同域名访问，需要配置为true
                     pathRewrite:{
                         '^/json':''  //代理接口地址
                     }   
                 }),
                 proxy('/json/list',{     //商品分类下的数据
-                    target : "http://localhost:9000/"
+                    target : "http://10.9.65.195:9000/"
                 })
                 
             ]

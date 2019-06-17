@@ -8,6 +8,7 @@
             let indexJson = await ajax("http://localhost:9000/index");
             // console.log(indexJson);
             let index = template.render(indexHtml, indexJson)
+            $("header").css("display","block")
             $("header").html(indexHeaderHtml);
             $("main").html(index);
             // 顶部导航条滑动

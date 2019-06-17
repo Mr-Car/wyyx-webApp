@@ -1,0 +1,218 @@
+.details-header {
+    position: relative;
+    height: .366667rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .1rem;
+
+    .left a,
+    .right a {
+        font-family: "iconfont";
+        font-size: .233333rem;
+        font-weight: 100;
+        line-height: 1;
+    }
+
+    .right {
+        width: .541667rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+            line-height: 1;
+            display: flex;
+
+            img {
+                width: .183333rem;
+                height: .183333rem;
+            }
+        }
+    }
+
+    .logo {
+        width: .716667rem;
+        height: .225rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+
+        img {
+            width: .716667rem;
+            height: .225rem;
+        }
+    }
+}
+
+.details-nav {
+    height: .25rem;
+    line-height: .25rem;
+
+    .details-nav-list {
+        padding: 0 .125rem;
+
+    }
+
+    .nav-item {
+        width: auto;
+        margin-right: .2rem;
+        padding: 0 .066667rem;
+    }
+
+    .active {
+        color: #B4282D;
+        border-bottom: 1px solid #B4282D;
+    }
+}
+
+// 列表主要内容
+.nav-tit {
+    margin-top: .083333rem;
+    height: .458333rem;
+    line-height: .458333rem;
+    text-align: center;
+    font-size: .116667rem;
+    background: #ffffff;
+}
+
+.list-items {
+    background: #ffffff;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .item {
+            width: 1.5625rem;
+            height: 2.341667rem;
+            padding: 0 .041667rem .1375rem .083333rem;
+            background: #F4F4F4;
+            background-clip: content-box;
+            position: relative;
+            >a{
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+            img {
+                width: 1.4375rem;
+                height: 1.4375rem;
+            }
+
+            &:nth-of-type(2n) {
+                padding: 0 .083333rem .1375rem .041667rem;
+            }
+
+            .item-promDesc {
+                position: absolute;
+                top: 1.166667rem;
+                left: .083333rem;
+                color: #DD1A21;
+                border: 1px solid #DD1A21;
+                background: #ffffff;
+                line-height: .15rem;
+                height: .15rem;
+                font-size: .1rem;
+                border-left: 0;
+                border-radius: 0 .075rem .075rem 0;
+                padding: 0 .066667rem 0 .05rem;
+            }
+
+            .promTitle {
+                position: absolute;
+                left: .083333rem;
+                top: 1.366667rem;
+                width: .508333rem;
+                height: .25rem;
+                background: url("../../../dev/img/bg_details.png") no-repeat;
+                background-size: .508333rem .25rem;
+                z-index: 10;
+                color: #ffffff;
+                text-align: center;
+                overflow: hidden;
+
+                span {
+                    position: absolute;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    &:first-child {
+                        width: .375rem;
+                        top: 0;
+                        left: .016667rem;
+                    }
+
+                    &:last-child {
+                        left: .05rem;
+                        top: .116667rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            .remaining {
+                position: absolute;
+                left: .083333rem;
+                top: 1.416667rem;
+                width: 1.4375rem;
+                height: .2rem;
+                background: #DD1A21;
+                padding-left: .4375rem;
+                text-align: center;
+                line-height: .2rem;
+                color: #ffffff;
+            }
+
+            .logo618{
+                width: .266667rem;
+                height: .266667rem;
+                position: absolute;
+                top: .025rem;
+                left: .108333rem;
+            }
+
+            .item-desc{
+                margin-top: .183333rem;
+                padding-top: .083333rem;
+                background: #ffffff;
+                .desc-tit{
+                    font-size: .116667rem;
+                    height: .166667rem;
+                    line-height: .166667rem;
+                    overflow: hidden;
+                }
+                .desc-price{
+                    height: .2rem;
+                    line-height: .2rem;
+                    span{
+                        &:first-child{
+                            color: #b4282d;
+                            font-size: .133333rem;
+                            font-weight: bold;
+                        }
+                        &:last-child{
+                            font-size: .1rem;
+                            color: #999;
+                            text-decoration: line-through;
+                        }
+                    }
+                }
+                .desc-now{
+                    width: .616667rem;
+                    height: .133333rem;
+                    font-size: .1rem;
+                    border: 1px solid #b4282d;
+                    border-radius: .066667rem;
+                    line-height: .133333rem;
+                    padding: 0 .05rem;
+                    color: #B4282D;
+                }
+            }
+            
+        }
+    }
+}

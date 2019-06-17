@@ -1,18 +1,19 @@
 <div class="sort">
-    <div class="sort-search"></div>
+    <div class="sort-search">
+        <div>
+            <span></span><a href="#/search">搜索商品, 共24849款好物</a>
+        </div>
+    </div>
     <section>
-        <nav>
-            <ul>
-                <li></li>
+        <nav class="sort-list">
+            <ul class=>
+                {{each categoryL1List}}
+                <li index="{{$index}}">{{$value.name}}</li>
+                {{/each}}
             </ul>
         </nav>
         <div class="sort-details">
-            <div class="sort-banner"></div>
-            <div class="sort-nav-list">
-                <ul>
-                    <li></li>
-                </ul>
-            </div>
+            <div></div>
         </div>
     </section>
 </div>

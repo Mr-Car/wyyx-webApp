@@ -1,0 +1,107 @@
+<div class="productDetail">
+    <div class="productDetail-swiper swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="{{primaryPicUrl}}" alt=""></div>
+            <div class="swiper-slide"><img src="{{itemDetail.picUrl1}}" alt=""></div>
+            <div class="swiper-slide"><img src="{{itemDetail.picUrl2}}" alt=""></div>
+            <div class="swiper-slide"><img src="{{itemDetail.picUrl3}}" alt=""></div>
+            <div class="swiper-slide"><img src="{{itemDetail.picUrl4}}" alt=""></div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-tit"><img src="{{detailPromBanner.bannerTitleUrl}}" alt=""></div>
+        <div class="content-price">
+            <div class="tit">{{detailPromBanner.promoTitle}}</div>
+            <div class="price">
+                <span class="activityPrice">{{detailPromBanner.activityPrice}}</span><span
+                    class="retailPrice">{{detailPromBanner.retailPrice}}</span>
+            </div>
+        </div>
+        <div class="time">距结束 9天3小时</div>
+    </div>
+
+    <div class="m-promBanner">
+        <div class="tit">
+            <div>{{name}}</div>
+            <div>{{simpleDesc}}</div>
+        </div>
+        <div class="evaluate">
+            <div class="box">
+                <div class="num">{{goodCmtRate}}</div>
+                <div class="tit">好评率</div>
+            </div>
+            <div class="arrow"></div>
+        </div>
+    </div>
+
+    <div class="bonusBanner">
+        <div class="tit">618购物津贴</div>
+        <div class="desc">{{bonusBanner.descList[0]}}</div>
+        <div class="go">立即免费领</div>
+    </div>
+
+    <div class="m-shoppingReward">
+        <span>{{shoppingReward.name}}：</span><span>{{shoppingReward.rewardDesc}}</span><span
+            class="hint">{{shoppingReward.rewardValue}}</span>
+    </div>
+
+    <div class="cart">
+        <div class="specSelect">
+            <div class="inner">
+                <span>请选择规格数量</span>
+                <div class="arrow"></div>
+            </div>
+        </div>
+        <div class="m-points">
+            <div class="inner">
+                <div>限制：&nbsp;</div>
+                <div>{{itemLimit}}</div>
+            </div>
+        </div>
+        <div class="delivery">
+            <div class="inner">
+                <div>配送：&nbsp;</div>
+                <div class="addressSelect">请选择配送地址</div>
+                <div class="arrow"></div>
+            </div>
+        </div>
+        <div class="service">
+            <div class="inner">
+                <div class="tit">服务：&nbsp;</div>
+                <div class="serviceList">
+                    <ul>
+                        <li>支持7天无忧退换货</li>
+                        <li>48小时快速退款</li>
+                        <li>满88元免邮费</li>
+                        <li>网易自营品牌</li>
+                        <li>国内部分地区无法配送</li>
+                    </ul>
+                </div>
+                <div class="arrow"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="adBanners">
+        <a href="{{adBanners[0].targetUrl}}">
+            <img src="{{adBanners[0].picUrl}}" alt="">
+        </a>
+    </div>
+
+    <div class="detailHtml">
+    </div>
+
+    <div class="detail-footer">
+        <div class="kefu">
+
+        </div>
+        <div class="buy">
+            立即购买
+        </div>
+        <div class="addCart">
+            加入购物车
+        </div>
+    </div>
+
+
+</div>

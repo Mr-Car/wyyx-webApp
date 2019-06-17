@@ -3,6 +3,8 @@ const list = require("./list.json")
 const searchwords = require("./searchwords.json")
 const sort618 = require("./sort618.json")
 const globalData = require("./globalData.json")
+const details = require("./details.json")
+const productDetail=require('./productDetail.json')
 
 module.exports= function(){
     return {
@@ -10,6 +12,8 @@ module.exports= function(){
         index,
         searchwords,
         sort618,
-        globalData
+        globalData,
+        details,
+        productDetail
     }
 }

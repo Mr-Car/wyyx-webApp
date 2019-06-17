@@ -1,0 +1,15 @@
+<div class="sort-banner">
+    <img src="{{currentCategory.wapBannerUrl}}" alt="">
+</div>
+<div class="sort-nav-list">
+    <ul>
+        {{each currentCategory.subCateList}}
+        <li>
+            <a href="#/details">
+                <img src="{{$value.wapBannerUrl}}" alt="">
+                <span>{{$value.name}}</span>
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+</div>

@@ -3,5 +3,7 @@
     "/json/list":"/list",
     "/json/sort618":"/sort618",
     "/json/searchwords":"/searchwords",
-    "/json/globalData":"/globalData"
+    "/json/globalData":"/globalData",
+    "/json/details":"/details",
+    "/json/productDetail":"/productDetail"
 }

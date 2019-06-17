@@ -215,7 +215,6 @@ main {
   overflow: scroll;
   font-size: .1rem;
   flex: 1;
-  padding: 0 0 .416667rem 0;
   background: #F4F4F4;
   position: relative;
 
@@ -469,35 +468,15 @@ main {
       }
 
       .icon-footer {
+        font-family: "iconfont" !important;
         display: inline-block;
         display: block;
         width: .166667rem;
         height: .166667rem;
-        background: url("../img/tabBar_s43a0dc8a7d_de25ef8e19.png")no-repeat;
-        background-size: .166667rem 2.041667rem;
-
-
+        font-size: .166667rem;
+        line-height: 1;
       }
-      $p : -0.208333rem;
-      &:nth-of-type(1) .icon-footer {
-        background-position: 0 $p*5;
-      }
-
-      &:nth-of-type(2) .icon-footer {
-        background-position: 0 -0.625rem;
-      }
-
-      &:nth-of-type(3) .icon-footer {
-        background-position: 0 -1.458333rem;
-      }
-
-      &:nth-of-type(4) .icon-footer {
-        background-position: 0 -0.208333rem;
-      }
-
-      &:nth-of-type(5) .icon-footer {
-        background-position: 0 -1.875rem;
-      }
+     
 
     }
     .active {

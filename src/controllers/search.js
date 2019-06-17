@@ -6,7 +6,8 @@ export default function () {
         let searchData = await ajax("http://localhost:9000/searchwords")
         // console.log(searchData);
         let search = template.render(searchHtml, searchData)
-        $("#app").html(search)
+        $("header").css("display","none")
+        $("main").html(search)
     }
     getSearch()
 }
